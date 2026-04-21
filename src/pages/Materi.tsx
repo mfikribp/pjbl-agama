@@ -4,6 +4,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { MATERI } from '../data/materiData';
 import RolledTextButton from '../components/RolledTextButton';
 
+import { replaceVerseRefs } from '../utils/quranUtils';
+
 export default function Materi() {
   const [selectedItem, setSelectedItem] = useState<any>(null);
   const location = useLocation();
@@ -184,7 +186,7 @@ export default function Materi() {
                       [&_.sub-card_h4]:text-xl [&_.sub-card_h4]:font-bold [&_.sub-card_h4]:mb-4 [&_.sub-card_h4]:text-slate-900
                       [&_audio]:w-full [&_audio]:mt-4
                     "
-                    dangerouslySetInnerHTML={{ __html: selectedItem.html }} 
+                    dangerouslySetInnerHTML={{ __html: replaceVerseRefs(selectedItem.html) }} 
                   />
                 </div>
 
