@@ -1,0 +1,88 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.25s ease;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Variants */
+.primary {
+  background: #6c63ff;
+  color: #fff;
+}
+.primary:hover {
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.45);
+  transform: translateY(-2px);
+  background: #7c74ff;
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid rgba(108, 99, 255, 0.45);
+  color: #8b85ff;
+}
+.outline:hover {
+  background: rgba(108, 99, 255, 0.1);
+  border-color: rgba(108, 99, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+.success {
+  background: #34d399;
+  color: #fff;
+}
+.success:hover {
+  background: #2ec68a;
+  box-shadow: 0 4px 20px rgba(52, 211, 153, 0.4);
+  transform: translateY(-2px);
+}
+
+.ghost {
+  background: rgba(255,255,255,0.04);
+  color: #9099b0;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.ghost:hover {
+  background: rgba(255,255,255,0.08);
+  color: #eaeaea;
+  transform: translateY(-1px);
+}
+
+/* Inner wrapper clips the rolling text */
+.inner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  /* height set via JS to match one line */
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+/* Each row of characters */
+.row {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+/* The bottom (clone) row sits absolutely below */
+.clone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  opacity: 0;
+}

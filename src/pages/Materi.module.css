@@ -1,0 +1,126 @@
+.pageTitle {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.pageTitle h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+.pageTitle p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.toc {
+  background: rgba(108,99,255,0.07);
+  border: 1px solid rgba(108,99,255,0.15);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+.tocTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #8b85ff;
+  margin-bottom: 0.75rem;
+}
+.tocGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.3rem;
+}
+.tocLink {
+  font-size: 0.82rem;
+  color: #9099b0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+}
+.tocLink:hover {
+  background: rgba(255,255,255,0.05);
+  color: #eaeaea;
+}
+.tocArrow { font-size: 0.75rem; color: #6c63ff; }
+
+.materiList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.materiItem {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: border-color 0.25s, background 0.25s;
+  scroll-margin-top: 80px;
+}
+.materiItem:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
+}
+
+.materiTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.materiTitle::before {
+  content: '';
+  width: 3px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.materiContent {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+.materiContent p { margin-bottom: 0.5rem; }
+.materiContent p + p { margin-top: 0.4rem; }
+.materiContent strong { color: var(--text-primary); }
+.materiContent em { color: var(--gold-light); }
+
+/* Custom Scrollbar for Modal */
+:global(.custom-scrollbar)::-webkit-scrollbar {
+  width: 8px;
+}
+
+:global(.custom-scrollbar)::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 10px;
+}
+
+:global(.custom-scrollbar)::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+  border: 2px solid #f8fafc;
+}
+
+:global(.custom-scrollbar)::-webkit-scrollbar-thumb:hover {
+  background: #0ea5e9;
+}
+
