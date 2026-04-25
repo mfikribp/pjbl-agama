@@ -76,7 +76,7 @@ export const NavItems = ({ items, className }: any) => {
 
 export const NavbarLogo = () => (
   <Link to="/" className="font-black text-2xl tracking-tighter text-slate-900">
-    TAJWID<span className="text-sky-500">INTERACTIVE</span>
+    <span className="text-sky-500"> KELAS XII</span>
   </Link>
 );
 

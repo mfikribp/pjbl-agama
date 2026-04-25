@@ -16,21 +16,25 @@ export default function NavbarDemo() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const items = [
     { name: "Beranda", link: "/" },
-    { name: "Materi", link: "/materi" },
-    { name: "Kuis", link: "/quiz" },
-    { name: "Makhraj", link: "/makhraj" },
+    { name: "Al-Qur'an Hadis", link: "/alquran-hadis" },
+    { name: "Aqidah Akhlak", link: "/aqidah-akhlak" },
+    { name: "Fiqih", link: "/fiqih" },
+    { name: "SKI", link: "/ski" },
+    { name: "Bahasa Arab", link: "/bahasa-arab" },
   ];
 
   return (
     <Navbar>
       <NavBody>
-        <NavbarLogo />
-        <div className="absolute inset-x-0 flex items-center justify-center pointer-events-none">
-          <div className="pointer-events-auto">
-            <NavItems items={items} />
-          </div>
+        <div className="flex-shrink-0">
+          <NavbarLogo />
         </div>
-        <div className="w-[150px]" /> {/* Spacer pengganti tombol login */}
+        
+        <div className="flex-grow flex items-center justify-center">
+          <NavItems items={items} />
+        </div>
+
+        <div className="w-[200px] flex-shrink-0" /> {/* Spacer balanced with logo area */}
       </NavBody>
 
       <MobileNav>

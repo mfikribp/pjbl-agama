@@ -1,14 +1,21 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { gsap } from 'gsap';
+import { useSearchParams, Link } from 'react-router-dom';
 import RolledTextButton from '../components/RolledTextButton';
-import { QUIZ_DATA, shuffleArray } from '../data/quizData';
+import { materiAgama } from '../data/materi-agama';
+import { shuffleArray } from '../utils/quizUtils';
 import { generateAIQuestions } from '../services/aiService';
 
 const LETTERS = ['A', 'B', 'C', 'D'];
 
 export default function Quiz() {
-  const [questions, setQuestions] = useState(() => shuffleArray(QUIZ_DATA));
+  const [searchParams] = useSearchParams();
+  const subjectId = searchParams.get('subject') || 'alquran-hadis';
+  const subjectData = materiAgama[subjectId];
+  const initialQuizData = subjectData?.quizzes || [];
+
+  const [questions, setQuestions] = useState(() => shuffleArray(initialQuizData));
   const [idx, setIdx] = useState(0);
   const [answered, setAnswered] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
@@ -17,13 +24,36 @@ export default function Quiz() {
   const [loading, setLoading] = useState(false);
   
   const feedbackRef = useRef<HTMLDivElement>(null);
-  const q = questions[idx] || questions[0];
+
+  // Re-shuffle when subject changes
+  useEffect(() => {
+    setQuestions(shuffleArray(initialQuizData));
+    setIdx(0);
+    setAnswered(false);
+    setSelected(null);
+    setCorrect(0);
+    setDone(false);
+  }, [subjectId]);
+
+  if (questions.length === 0) {
+    return (
+      <div className="max-w-4xl mx-auto py-24 px-6 text-center">
+        <h2 className="text-4xl font-black text-slate-900 mb-6">Kuis Belum Tersedia</h2>
+        <p className="text-slate-500 text-xl mb-12">Maaf, kuis untuk mata pelajaran {subjectData?.subject || subjectId} sedang dalam proses pembuatan.</p>
+        <Link to="/" className="inline-block px-8 py-4 bg-sky-500 text-white rounded-2xl font-bold hover:bg-sky-600 transition-colors">
+          Kembali ke Beranda
+        </Link>
+      </div>
+    );
+  }
+
+  const q = questions[idx];
   const progress = Math.round((idx / questions.length) * 100);
 
   const startAIQuiz = async () => {
     setLoading(true);
     try {
-      const newQuestions = await generateAIQuestions('Tajwid');
+      const newQuestions = await generateAIQuestions(subjectData?.subject || 'Agama Islam');
       if (newQuestions && newQuestions.length > 0) {
         setQuestions(newQuestions);
         setIdx(0); setAnswered(false); setSelected(null); setCorrect(0); setDone(false);
@@ -68,7 +98,7 @@ export default function Quiz() {
     <div className="max-w-4xl mx-auto px-6 py-20">
       <div className="mb-16">
         <div className="flex justify-between items-end mb-4">
-          <h2 className="text-4xl font-black text-slate-900">Kuis Tajwid</h2>
+          <h2 className="text-4xl font-black text-slate-900">Kuis {subjectData?.subject}</h2>
           <span className="text-sky-600 font-bold uppercase tracking-widest text-xs">Soal {idx + 1} / {questions.length}</span>
         </div>
         <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">

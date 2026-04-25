@@ -1,4 +1,6 @@
-export const QUIZ_DATA = [
+import { QuizItem } from '../types';
+
+export const alquranHadisQuiz: QuizItem[] = [
   {
     bab: 'Pengantar',
     ayat: 'وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا',
@@ -45,7 +47,7 @@ export const QUIZ_DATA = [
     soal: 'Nun mati pada kata "dun-ya" bertemu huruf ي dalam satu kata. Hukumnya adalah?',
     pilihan: ['Idgham Bighunnah', 'Idzhar biasa', 'Ikhfa', 'Tidak ada hukum khusus, dibaca jelas'],
     jawaban: 3,
-    penjelasan: 'Idgham hanya berlaku jika nun mati dan huruf idgham berada di kata yang BERBEDA. Dalam satu kata seperti دُنْيَا tidak berlaku idgham, melainkan dibaca jelas.'
+    penjelasan: 'Idgham hanya berlaku jika nun mati and huruf idgham berada di kata yang BERBEDA. Dalam satu kata seperti دُنْيَا tidak berlaku idgham, melainkan dibaca jelas.'
   },
   {
     bab: 'Ikhfa Haqiqi',
@@ -85,7 +87,7 @@ export const QUIZ_DATA = [
     soal: 'Mim mati bertemu huruf ب. Hukumnya adalah?',
     pilihan: ['Idzhar Syafawi', 'Idgham Mimi', 'Ikhfa Syafawi', 'Iqlab'],
     jawaban: 2,
-    penjelasan: 'Mim mati + ب → Ikhfa Syafawi. Mim dibaca samar dengan dengung 2 harakat, bibir tidak rapat.'
+    penjelasan: 'Mim mati + ب → Ikhfa Syafawi. Mim dibaca samar with dengung 2 harakat, bibir tidak rapat.'
   },
   {
     bab: 'Qalqalah',
@@ -159,13 +161,4 @@ export const QUIZ_DATA = [
     jawaban: 1,
     penjelasan: 'Nun bertasydid → Ghunnah Musyaddadah, harus didengungkan selama 2 harakat dari rongga hidung.'
   }
-]
-
-export function shuffleArray(arr) {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
+];

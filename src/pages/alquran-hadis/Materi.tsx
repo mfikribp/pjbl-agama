@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { MATERI } from '../data/materiData';
-import RolledTextButton from '../components/RolledTextButton';
+import { MATERI } from '../../data/agama/alquran-hadis/materi-tajwid';
+import RolledTextButton from '../../components/RolledTextButton';
 
-import { replaceVerseRefs } from '../utils/quranUtils';
+import { replaceVerseRefs } from '../../utils/quranUtils';
 
 export default function Materi() {
   const [selectedItem, setSelectedItem] = useState<any>(null);

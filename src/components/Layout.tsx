@@ -28,10 +28,10 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="space-y-4">
             <div className="font-black text-2xl tracking-tighter text-slate-900 uppercase">
-              Tajwid<span className="text-sky-500">Interactive</span>
+              Web Agama<span className="text-sky-500"> Kelas 7</span>
             </div>
             <p className="text-slate-500 text-sm">
-              Media pembelajaran tajwid interaktif modern untuk semua kalangan.
+              Media pembelajaran materi agama Islam kelas 7 MTs/SMP yang interaktif dan modern.
             </p>
           </div>
           
@@ -39,8 +39,11 @@ export default function Layout() {
             <h4 className="font-bold text-slate-900 uppercase tracking-widest text-xs">Menu</h4>
             <div className="flex flex-col gap-2">
               <a href="/" className="hover:text-sky-500">Beranda</a>
-              <a href="/materi" className="hover:text-sky-500">Materi</a>
-              <a href="/quiz" className="hover:text-sky-500">Kuis</a>
+              <a href="/alquran-hadis" className="hover:text-sky-500">Al-Qur'an Hadis</a>
+              <a href="/aqidah-akhlak" className="hover:text-sky-500">Aqidah Akhlak</a>
+              <a href="/fiqih" className="hover:text-sky-500">Fiqih</a>
+              <a href="/ski" className="hover:text-sky-500">SKI</a>
+              <a href="/bahasa-arab" className="hover:text-sky-500">Bahasa Arab</a>
             </div>
           </div>
 
