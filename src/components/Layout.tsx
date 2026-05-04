@@ -1,6 +1,5 @@
-import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Outlet, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import NavbarDemo from './Navbar';
 
 export default function Layout() {
@@ -45,11 +44,6 @@ export default function Layout() {
               <a href="/ski" className="hover:text-sky-500">SKI</a>
               <a href="/bahasa-arab" className="hover:text-sky-500">Bahasa Arab</a>
             </div>
-          </div>
-
-          <div className="space-y-4 text-slate-500 text-sm">
-            <h4 className="font-bold text-slate-900 uppercase tracking-widest text-xs">Kontak</h4>
-            <p>support@tajwidinteractive.id</p>
           </div>
         </div>
       </footer>

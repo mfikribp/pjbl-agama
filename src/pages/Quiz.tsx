@@ -1,11 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import RolledTextButton from '../components/RolledTextButton';
 import { materiAgama } from '../data/materi-agama';
 import { shuffleArray } from '../utils/quizUtils';
-import { generateAIQuestions } from '../services/aiService';
 
 const LETTERS = ['A', 'B', 'C', 'D'];
 
@@ -50,21 +49,6 @@ export default function Quiz() {
   const q = questions[idx];
   const progress = Math.round((idx / questions.length) * 100);
 
-  const startAIQuiz = async () => {
-    setLoading(true);
-    try {
-      const newQuestions = await generateAIQuestions(subjectData?.subject || 'Agama Islam');
-      if (newQuestions && newQuestions.length > 0) {
-        setQuestions(newQuestions);
-        setIdx(0); setAnswered(false); setSelected(null); setCorrect(0); setDone(false);
-      }
-    } catch (err) {
-      alert('Gagal mengambil soal AI.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const handleAnswer = (i: number) => {
     if (answered) return;
     setAnswered(true);
@@ -89,7 +73,6 @@ export default function Quiz() {
       <p className="text-slate-500 text-xl mb-12">Bagus! Kamu menjawab {correct} dari {questions.length} soal dengan benar.</p>
       <div className="flex justify-center gap-6">
         <RolledTextButton text="Ulangi Kuis" onClick={() => { setIdx(0); setDone(false); setCorrect(0); }} className="bg-sky-500 text-white rounded-2xl h-16 px-12" />
-        <RolledTextButton text="AI Quiz" onClick={startAIQuiz} variant="outline" className="border-slate-200 text-slate-600 rounded-2xl h-16 px-12" />
       </div>
     </div>
   );

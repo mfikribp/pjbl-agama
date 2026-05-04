@@ -79,18 +79,36 @@ export default function Makhraj() {
                 <div className="inline-block px-4 py-1.5 bg-sky-50 text-sky-600 rounded-full text-sm font-bold mb-6">
                   Area Terpilih
                 </div>
-                <h3 className="text-4xl md:text-6xl font-black mb-8 text-slate-900 leading-tight">
+                <h3 className="text-4xl md:text-5xl font-black mb-6 text-slate-900 leading-tight">
                   {selected.label}
                 </h3>
-                <p className="text-xl md:text-2xl text-slate-500 leading-relaxed mb-10">
-                  {selected.desc}
+                
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  {selected.detail || selected.desc}
                 </p>
-                <div className="flex gap-4">
+
+                {selected.letters && (
+                  <div className="mb-10">
+                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Huruf Terkait</h4>
+                    <div className="flex flex-wrap gap-3">
+                      {selected.letters.map((letter, idx) => (
+                        <div 
+                          key={idx}
+                          className="w-12 h-12 flex items-center justify-center bg-slate-50 border border-slate-100 rounded-xl text-2xl font-bold text-slate-700 hover:bg-sky-500 hover:text-white hover:border-sky-500 transition-all cursor-default shadow-sm"
+                        >
+                          {letter}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex flex-wrap gap-4">
                   <Link 
                     to={`/materi?bab=${selected.materiId}`}
                     className="px-8 py-4 bg-sky-500 text-white rounded-2xl font-bold hover:bg-sky-600 transition-colors flex items-center justify-center"
                   >
-                    Pelajari Huruf
+                    Pelajari Hukum Tajwid
                   </Link>
                   <button 
                     onClick={() => setSelected(null)}

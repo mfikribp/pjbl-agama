@@ -10,7 +10,7 @@ Menyediakan panduan *prompt* spesifik bagi model AI image generator untuk mengha
 
 ---
 
-## 📝 Daftar Prompt per Langkah Wudhu (Total 10 Langkah)
+## Daftar Prompt per Langkah Wudhu (Total 10 Langkah)
 
 ### 1. Niat & Basmalah
 - **Prompt**: `Minimalist modern flat illustration of a muslim person looking peaceful and preparing for prayer. Hands resting gently. Clean blue and white theme, soft aesthetic, educational style, white background. ABSOLUTELY NO TEXT, NO WORDS, NO LETTERS, NO TYPOGRAPHY, NO WATERMARK.`

@@ -1,14 +1,14 @@
 "use client";
+import { IconMenu2, IconX } from "@tabler/icons-react";
+import { clsx, type ClassValue } from "clsx";
+import {
+    AnimatePresence,
+    motion,
+    useMotionValueEvent,
+    useScroll,
+} from "framer-motion";
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { IconMenu2, IconX } from "@tabler/icons-react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
-import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -76,7 +76,7 @@ export const NavItems = ({ items, className }: any) => {
 
 export const NavbarLogo = () => (
   <Link to="/" className="font-black text-2xl tracking-tighter text-slate-900">
-    <span className="text-sky-500"> KELAS XII</span>
+    Agama
   </Link>
 );
 

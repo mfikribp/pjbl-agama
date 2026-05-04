@@ -4,6 +4,7 @@ export const alquranHadisMateri: SubjectMateri = {
   id: "alquran-hadis",
   subject: "Al-Qur'an Hadis",
   description: "Mempelajari Al-Qur'an dan Hadis sebagai pedoman utama kehidupan umat Islam, termasuk hukum bacaannya.",
+  pdfUrl: "/assets/materi/alquran-hadis/materi/alquran_hadist.pdf",
   chapters: [
     {
       id: "kedudukan-alquran-hadis",

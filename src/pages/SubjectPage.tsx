@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useParams, Link } from 'react-router-dom';
-import { materiAgama } from '../data/materi-agama';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import RolledTextButton from '../components/RolledTextButton';
+import { materiAgama } from '../data/materi-agama';
 
 export default function SubjectPage() {
   const { subjectId } = useParams<{ subjectId: string }>();
@@ -60,8 +60,10 @@ export default function SubjectPage() {
           <div className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link to="/alquran-hadis/tajwid" className="group p-8 rounded-3xl bg-sky-500 text-white shadow-xl shadow-sky-100 hover:scale-[1.02] transition-all">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center font-black text-xl">
-                  ✨
+                <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-white">Materi Tajwid</h3>
               </div>
@@ -71,8 +73,10 @@ export default function SubjectPage() {
             </Link>
             <Link to="/alquran-hadis/makhraj" className="group p-8 rounded-3xl bg-white border-2 border-sky-500 text-sky-600 shadow-xl shadow-sky-100 hover:scale-[1.02] transition-all">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-sky-500 text-white flex items-center justify-center font-black text-xl">
-                  🗣️
+                <div className="w-12 h-12 rounded-2xl bg-sky-500 text-white flex items-center justify-center">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
                 </div>
                 <h3 className="text-2xl font-bold">Makhraj</h3>
               </div>
@@ -87,8 +91,10 @@ export default function SubjectPage() {
         {subjectId === 'ski' && (
           <div className="mb-20">
             <Link to="/ski/timeline" className="group p-8 rounded-3xl bg-amber-500 text-white shadow-xl shadow-amber-100 hover:scale-[1.02] transition-all flex items-center gap-6">
-              <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center font-black text-3xl">
-                ⏳
+              <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Garis Waktu Peradaban</h3>
@@ -100,29 +106,14 @@ export default function SubjectPage() {
           </div>
         )}
 
-        {/* Special Button for Fiqih */}
-        {subjectId === 'fiqih' && (
-          <div className="mb-20">
-            <Link to="/fiqih/wudhu-simulator" className="group p-8 rounded-3xl bg-emerald-500 text-white shadow-xl shadow-emerald-100 hover:scale-[1.02] transition-all flex items-center gap-6">
-              <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center font-black text-3xl">
-                💧
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">Simulator Tata Cara Wudhu</h3>
-                <p className="text-emerald-50 opacity-90 leading-relaxed">
-                  Panduan interaktif langkah-demi-langkah berwudhu yang benar.
-                </p>
-              </div>
-            </Link>
-          </div>
-        )}
-
         {/* Quiz Button for All Subjects */}
         <div className="mb-20">
           <Link to={`/quiz?subject=${subjectId}`} className="group p-8 rounded-3xl bg-blue-600 text-white shadow-xl shadow-blue-100 hover:scale-[1.02] transition-all flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center font-black text-xl">
-                📝
+              <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Kuis {subjectData.subject}</h3>
