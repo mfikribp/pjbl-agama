@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { IconHistory, IconArrowLeft, IconArrowRight, IconCalendar } from '@tabler/icons-react';
 
 interface TimelineEvent {
   id: number;
@@ -76,96 +77,122 @@ export default function Timeline() {
 
   useEffect(() => {
     if (scrollRef.current) {
-      // Calculate the draggable width
       setWidth(scrollRef.current.scrollWidth - scrollRef.current.offsetWidth);
     }
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50 py-20 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <header className="mb-20 text-center">
+    <div className="relative min-h-screen bg-[#fafbfc] overflow-hidden">
+      {/* Decorative BG */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-amber-100/40 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-50/40 rounded-full blur-[100px]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-32">
+        <header className="mb-24 text-center max-w-3xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sky-600 font-bold tracking-[0.2em] uppercase text-xs mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-amber-50 text-amber-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-6"
           >
+            <IconHistory size={14} />
             Sejarah Kebudayaan Islam
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-slate-900 mb-8"
+            className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tight"
           >
-            Garis Waktu <span className="text-sky-500">Peradaban.</span>
+            Garis Waktu <span className="text-amber-500">Peradaban.</span>
           </motion.h1>
-          <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-slate-500 leading-relaxed"
+          >
             Geser dan jelajahi momen-momen krusial dalam sejarah perjuangan Rasulullah SAW membangun pondasi kejayaan Islam.
-          </p>
+          </motion.p>
         </header>
 
         {/* Timeline Container */}
-        <div className="relative mt-32" ref={scrollRef}>
+        <div className="relative mt-40" ref={scrollRef}>
           {/* Progress Line */}
-          <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2 z-0" />
+          <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-100 -translate-y-1/2 z-0" />
           
           <motion.div 
             drag="x"
             dragConstraints={{ right: 0, left: -width }}
             whileTap={{ cursor: "grabbing" }}
-            className="flex gap-16 cursor-grab px-4 items-center relative z-10 w-max"
+            className="flex gap-16 cursor-grab px-4 items-center relative z-10 w-max py-10"
           >
-            {events.map((event) => (
+            {events.map((event, idx) => (
               <motion.div
                 key={event.id}
                 onClick={() => setActiveId(event.id)}
-                className={`flex-shrink-0 w-80 p-8 rounded-[2.5rem] transition-all duration-500 border relative ${
+                className={`flex-shrink-0 w-[22rem] p-10 rounded-[3.5rem] transition-all duration-700 border-2 relative group ${
                   activeId === event.id 
-                    ? 'bg-white shadow-2xl shadow-sky-100 border-sky-100 scale-110' 
-                    : 'bg-slate-50/50 grayscale opacity-40 border-transparent'
+                    ? 'bg-white shadow-[0_40px_80px_-15px_rgba(245,158,11,0.15)] border-amber-200 scale-105 z-20' 
+                    : 'bg-white/40 backdrop-blur-md opacity-40 border-white scale-95 hover:opacity-60'
                 }`}
               >
-                <div className="flex justify-between items-center mb-6">
-                  <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest ${
+                <div className="flex justify-between items-start mb-10">
+                  <span className={`px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-widest ${
                     event.category === 'Mekah' ? 'bg-amber-100 text-amber-600' :
                     event.category === 'Madinah' ? 'bg-emerald-100 text-emerald-600' :
                     'bg-sky-100 text-sky-600'
                   }`}>
                     {event.category}
                   </span>
-                  <span className="text-slate-400 font-bold text-sm">{event.year}</span>
+                  <div className="flex items-center gap-1.5 text-slate-400 font-black text-[10px] uppercase tracking-widest">
+                    <IconCalendar size={14} />
+                    {event.year}
+                  </div>
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-4">{event.title}</h3>
-                <p className="text-slate-500 leading-relaxed text-sm">
+
+                <h3 className={`text-2xl font-black mb-6 tracking-tight leading-tight transition-colors ${activeId === event.id ? 'text-slate-900' : 'text-slate-500'}`}>
+                  {event.title}
+                </h3>
+                
+                <p className="text-slate-500 leading-relaxed font-medium">
                   {event.description}
                 </p>
                 
                 {/* Visual Connector Dot */}
-                <div className={`absolute top-[-4.5rem] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-4 border-slate-50 transition-colors ${
-                  activeId === event.id ? 'bg-sky-500' : 'bg-slate-300'
+                <div className={`absolute top-[-4.25rem] left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-4 border-[#fafbfc] transition-all duration-500 shadow-xl ${
+                  activeId === event.id ? 'bg-amber-500 scale-125' : 'bg-slate-200'
                 }`} />
+                
+                {/* Connector Number */}
+                <div className={`absolute top-[-7rem] left-1/2 -translate-x-1/2 font-black text-sm tracking-tighter transition-all duration-500 ${
+                  activeId === event.id ? 'text-amber-500 translate-y-0 opacity-100' : 'text-slate-300 translate-y-4 opacity-0'
+                }`}>
+                  0{idx + 1}
+                </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
 
-        <div className="mt-32 text-center flex flex-col items-center gap-6">
-          <div className="flex items-center gap-3 text-slate-400 font-medium">
-             <svg className="w-5 h-5 animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-             </svg>
-             <span>Geser ke kanan untuk melihat sejarah lebih lanjut</span>
-          </div>
+        <div className="mt-32 flex flex-col items-center gap-12">
+          <motion.div 
+            animate={{ x: [-10, 10, -10] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="flex items-center gap-4 px-6 py-3 bg-white/50 backdrop-blur-sm rounded-full border border-white shadow-sm"
+          >
+             <IconArrowLeft size={18} className="text-amber-400" />
+             <span className="text-slate-400 font-bold text-sm tracking-tight">Geser untuk navigasi waktu</span>
+             <IconArrowRight size={18} className="text-amber-400" />
+          </motion.div>
           
           <Link 
             to="/ski"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold hover:bg-slate-50 transition-all shadow-sm"
+            className="group inline-flex items-center gap-3 px-10 py-5 bg-white border border-white text-slate-600 rounded-[2rem] font-bold hover:bg-amber-500 hover:text-white transition-all shadow-[0_20px_40px_-12px_rgba(0,0,0,0.05)] hover:shadow-amber-200"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Kembali ke Materi
+            <IconArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+            <span className="font-black">Kembali ke Materi SKI</span>
           </Link>
         </div>
       </div>
