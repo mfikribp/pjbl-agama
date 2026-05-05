@@ -2,10 +2,10 @@
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { clsx, type ClassValue } from "clsx";
 import {
-    AnimatePresence,
-    motion,
-    useMotionValueEvent,
-    useScroll,
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
 } from "framer-motion";
 import React, { useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -76,8 +76,8 @@ export const NavItems = ({ items, className }: any) => {
             )}
           >
             {hovered === idx && (
-              <motion.div 
-                layoutId="hover-nav" 
+              <motion.div
+                layoutId="hover-nav"
                 className="absolute inset-0 bg-sky-50 rounded-xl -z-10"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -85,8 +85,8 @@ export const NavItems = ({ items, className }: any) => {
               />
             )}
             {isActive && !hovered && (
-              <motion.div 
-                layoutId="active-nav" 
+              <motion.div
+                layoutId="active-nav"
                 className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-sky-500 rounded-full"
               />
             )}
@@ -100,18 +100,18 @@ export const NavItems = ({ items, className }: any) => {
 
 export const NavbarLogo = () => (
   <Link to="/" className="group flex items-center gap-2 pointer-events-auto">
-    <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-100 group-hover:rotate-12 transition-transform duration-500">
-      <span className="text-white font-black text-xl">A</span>
-    </div>
     <span className="font-black text-2xl tracking-tighter text-slate-900">
-      Agama<span className="text-sky-500">.</span>
+      PAI Kelas
     </span>
+    <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-100 group-hover:rotate-12 transition-transform duration-500">
+      <span className="text-white font-black text-xl">7</span>
+    </div>
   </Link>
 );
 
 export const MobileNav = ({ children, className, visible }: any) => (
-  <motion.div 
-    animate={{ y: visible ? 10 : 0 }} 
+  <motion.div
+    animate={{ y: visible ? 10 : 0 }}
     className={cn("relative z-[70] mx-auto flex w-full flex-col lg:hidden px-4 pointer-events-auto", className)}
   >
     {children}
@@ -127,10 +127,10 @@ export const MobileNavHeader = ({ children }: any) => (
 export const MobileNavMenu = ({ children, isOpen }: any) => (
   <AnimatePresence>
     {isOpen && (
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.9, y: -20 }} 
-        animate={{ opacity: 1, scale: 1, y: 0 }} 
-        exit={{ opacity: 0, scale: 0.9, y: -20 }} 
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: -20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9, y: -20 }}
         className="absolute inset-x-4 top-24 z-50 flex flex-col gap-1 rounded-[2.5rem] bg-white/90 backdrop-blur-2xl p-6 shadow-2xl border border-white"
       >
         {children}

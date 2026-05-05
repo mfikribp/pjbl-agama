@@ -32,19 +32,19 @@ export default function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
             <div className="md:col-span-2 space-y-8">
               <Link to="/" className="group flex items-center gap-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-100 group-hover:rotate-12 transition-transform">
-                  <span className="text-white font-black text-xl">A</span>
-                </div>
                 <span className="font-black text-2xl tracking-tighter text-slate-900">
-                  Agama<span className="text-sky-500">.</span>
+                  PAI Kelas
                 </span>
+                <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-100 group-hover:rotate-12 transition-transform">
+                  <span className="text-white font-black text-xl">7</span>
+                </div>
               </Link>
               <p className="text-slate-500 text-lg leading-relaxed max-w-sm">
-                Media pembelajaran PAI & Bahasa Arab modern untuk siswa kelas 7 MTs/SMP. 
+                Media pembelajaran PAI & Bahasa Arab modern untuk siswa kelas 7 MTs/SMP.
                 Belajar agama menjadi lebih menyenangkan dan interaktif.
               </p>
             </div>
-            
+
             <div className="space-y-6">
               <h4 className="font-black text-slate-900 uppercase tracking-[0.2em] text-[10px]">Materi Utama</h4>
               <div className="flex flex-col gap-4 text-slate-500 font-bold text-sm">
