@@ -21,6 +21,7 @@ export default function NavbarDemo() {
     { name: "Fiqih", link: "/fiqih" },
     { name: "SKI", link: "/ski" },
     { name: "Bahasa Arab", link: "/bahasa-arab" },
+    { name: "Informatika", link: "/informatika" },
   ];
 
   return (

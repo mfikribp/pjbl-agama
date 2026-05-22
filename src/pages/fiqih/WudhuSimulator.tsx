@@ -16,7 +16,7 @@ const wudhuSteps: WudhuStep[] = [
   { 
     id: 1, 
     title: "Niat & Basmalah", 
-    arabic: "نَوَيْتُ الْوُضُوْءَ لِرَفْعِ الْحَدَثِ الْأَصْغERِ فَرْضًا لِلّٰهِ تَعَالَى", 
+    arabic: "نَوَيْتُ الْوُضُوْءَ لِرَفْعِ الْحَدَثِ الْأَصْغَرِ فَرْضًا لِلّٰهِ تَعَالَى", 
     desc: "Membaca Bismillah dan berniat dalam hati untuk menghilangkan hadas kecil demi mengharap ridha Allah SWT.", 
     isRukun: true, 
     image: "/assets/images/wudhu/step1-clean.png" 

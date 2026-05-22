@@ -7,7 +7,8 @@ import {
   IconScale, 
   IconHistory, 
   IconLanguage,
-  IconArrowRight
+  IconArrowRight,
+  IconCpu
 } from '@tabler/icons-react';
 
 import { materiAgama } from '../data/materi-agama';
@@ -18,6 +19,7 @@ const subjectIcons: Record<string, any> = {
   "fiqih": IconScale,
   "ski": IconHistory,
   "bahasa-arab": IconLanguage,
+  "informatika": IconCpu,
 };
 
 export default function Home() {
@@ -55,7 +57,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-sky-100 text-sky-600 rounded-full text-xs font-bold uppercase tracking-widest mb-10 shadow-sm"
           >
             <span className="w-2 h-2 bg-sky-500 rounded-full animate-pulse" />
-            Media Pembelajaran PAI & Bahasa Arab Modern
+            Media Pembelajaran PAI, Bahasa Arab & Informatika Modern
           </motion.div>
 
           <motion.h1
@@ -64,7 +66,7 @@ export default function Home() {
             transition={{ delay: 0.1, duration: 0.8 }}
             className="text-6xl md:text-9xl font-black mb-10 text-slate-900 tracking-tight leading-[0.9]"
           >
-            Materi Agama <br />
+            Materi Belajar <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600">
               Kelas 7.
             </span>
@@ -76,8 +78,8 @@ export default function Home() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-xl md:text-2xl text-slate-500 leading-relaxed mb-12 max-w-2xl mx-auto"
           >
-            Eksplorasi kurikulum PAI MTs/SMP dengan visualisasi interaktif, 
-            rangkuman cerdas, dan simulator ibadah dalam satu genggaman.
+            Eksplorasi kurikulum PAI, Bahasa Arab, dan Informatika dengan visualisasi interaktif, 
+            rangkuman cerdas, dan kuis pintar dalam satu genggaman.
           </motion.p>
         </div>
 

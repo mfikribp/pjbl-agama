@@ -4,7 +4,7 @@ export const fiqihMateri: SubjectMateri = {
   id: "fiqih",
   subject: "Fiqih",
   description: "Mempelajari tata cara ibadah dan hukum Islam praktis untuk ibadah sehari-hari.",
-  pdfUrl: "/assets/materi/fiqih/materi/buku_fikih_Mts_7_siswa.pdf",
+  pdfUrl: "/assets/materi/fiqih/materi/96972746FIKIH_MTs_KELAS_VII_KSKK_2020_CompressPdf_copy.pdf",
   chapters: [
     {
       id: "thaharah",

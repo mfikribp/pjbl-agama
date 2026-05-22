@@ -40,8 +40,8 @@ export default function Layout() {
                 </div>
               </Link>
               <p className="text-slate-500 text-lg leading-relaxed max-w-sm">
-                Media pembelajaran PAI & Bahasa Arab modern untuk siswa kelas 7 MTs/SMP.
-                Belajar agama menjadi lebih menyenangkan dan interaktif.
+                Media pembelajaran PAI, Bahasa Arab & Informatika modern untuk siswa kelas 7 MTs/SMP.
+                Belajar menjadi lebih menyenangkan dan interaktif.
               </p>
             </div>
 
@@ -59,6 +59,7 @@ export default function Layout() {
               <div className="flex flex-col gap-4 text-slate-500 font-bold text-sm">
                 <Link to="/ski" className="hover:text-sky-500 transition-colors">SKI</Link>
                 <Link to="/bahasa-arab" className="hover:text-sky-500 transition-colors">Bahasa Arab</Link>
+                <Link to="/informatika" className="hover:text-sky-500 transition-colors">Informatika</Link>
                 <Link to="/quiz" className="hover:text-sky-500 transition-colors">Kuis Interaktif</Link>
               </div>
             </div>
