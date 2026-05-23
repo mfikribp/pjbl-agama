@@ -42,7 +42,7 @@ export default function SubjectPage() {
         <div className="absolute top-[20%] -right-[5%] w-[30%] h-[30%] bg-indigo-50/50 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 lg:pt-40 lg:pb-32">
         <header className="mb-24 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -113,7 +113,7 @@ export default function SubjectPage() {
                   </div>
                   <h3 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">Kuis Pintar</h3>
                   <p className="text-blue-50/80 text-lg max-w-md leading-relaxed">
-                    Uji pemahamanmu mengenai {subjectData.subject} dengan kuis interaktif yang dirancang khusus untuk kurikulum kelas 7.
+                    Uji pemahamanmu mengenai {subjectData.subject} dengan kuis interaktif yang dirancang khusus untuk kurikulum kelas VII.
                   </p>
                 </div>
                 <div className="mt-12 flex items-center gap-3 font-bold group/btn">

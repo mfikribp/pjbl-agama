@@ -7,7 +7,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 
@@ -20,9 +20,16 @@ export const Navbar = ({ children, className }: any) => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
 
+  // Check initial scroll on mount
+  useEffect(() => {
+    if (window.scrollY > 50) {
+      setVisible(true);
+    }
+  }, []);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 50) setVisible(true);
-    else setVisible(false);
+    if (latest > 100) setVisible(true);
+    else if (latest < 20) setVisible(false);
   });
 
   return (
@@ -42,11 +49,23 @@ export const NavBody = ({ children, className, visible }: any) => {
         backdropFilter: visible ? "blur(16px)" : "blur(0px)",
         width: visible ? "min(95vw, 1100px)" : "min(95vw, 1280px)",
         y: visible ? 0 : 0,
-        backgroundColor: visible ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0)",
+        backgroundColor: visible ? "rgba(255, 255, 255, 0.75)" : "rgba(255, 255, 255, 0)",
         borderColor: visible ? "rgba(226, 232, 240, 0.8)" : "rgba(226, 232, 240, 0)",
-        boxShadow: visible ? "0 25px 50px -12px rgba(0, 0, 0, 0.05)" : "none",
+        boxShadow: visible ? "0 25px 50px -12px rgba(0, 0, 0, 0.05)" : "0 25px 50px -12px rgba(0, 0, 0, 0)",
+        filter: visible ? ["blur(0px)", "blur(3px)", "blur(0px)"] : ["blur(0px)", "blur(3px)", "blur(0px)"],
       }}
-      transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+      transition={{
+        default: {
+          type: "spring",
+          stiffness: 120,
+          damping: 20,
+          mass: 1
+        },
+        filter: {
+          duration: 0.35,
+          ease: "easeInOut"
+        }
+      }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full flex-row items-center justify-between rounded-[2rem] border px-8 py-3 lg:flex pointer-events-auto",
         className
@@ -101,10 +120,10 @@ export const NavItems = ({ items, className }: any) => {
 export const NavbarLogo = () => (
   <Link to="/" className="group flex items-center gap-2 pointer-events-auto">
     <span className="font-black text-2xl tracking-tighter text-slate-900">
-      PAI Kelas
+      PAI & Informatika
     </span>
     <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-100 group-hover:rotate-12 transition-transform duration-500">
-      <span className="text-white font-black text-xl">7</span>
+      <span className="text-white font-black text-sm">VII</span>
     </div>
   </Link>
 );

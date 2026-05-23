@@ -142,7 +142,7 @@ export default function Quiz() {
         <div className="absolute bottom-[20%] left-[-5%] w-[30%] h-[30%] bg-indigo-50/40 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 lg:py-32">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
             <div>

@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Outlet, useLocation, Link } from 'react-router-dom';
 import NavbarDemo from './Navbar';
+import { IconBrandGithub } from '@tabler/icons-react';
 
 export default function Layout() {
   const location = useLocation();
@@ -33,14 +34,14 @@ export default function Layout() {
             <div className="md:col-span-2 space-y-8">
               <Link to="/" className="group flex items-center gap-2">
                 <span className="font-black text-2xl tracking-tighter text-slate-900">
-                  PAI Kelas
+                  PAI & Informatika
                 </span>
                 <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-100 group-hover:rotate-12 transition-transform">
-                  <span className="text-white font-black text-xl">7</span>
+                  <span className="text-white font-black text-sm">VII</span>
                 </div>
               </Link>
               <p className="text-slate-500 text-lg leading-relaxed max-w-sm">
-                Media pembelajaran PAI, Bahasa Arab & Informatika modern untuk siswa kelas 7 MTs/SMP.
+                Media pembelajaran PAI, Bahasa Arab & Informatika modern untuk siswa kelas VII MTs.
                 Belajar menjadi lebih menyenangkan dan interaktif.
               </p>
             </div>
@@ -67,11 +68,30 @@ export default function Layout() {
 
           <div className="pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-slate-400 text-xs font-medium">
-              &copy; {new Date().getFullYear()} Media Pembelajaran PAI Kelas 7. Built for Excellence.
+              &copy; {new Date().getFullYear()} Media Pembelajaran PAI dan Informatika Kelas VII. Built for Excellence.
             </p>
-            <div className="flex gap-8 text-xs font-bold text-slate-400">
-              <span className="hover:text-slate-600 cursor-pointer transition-colors">Syarat & Ketentuan</span>
-              <span className="hover:text-slate-600 cursor-pointer transition-colors">Kebijakan Privasi</span>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs font-bold text-slate-400">
+              <span className="text-slate-300 font-medium tracking-wide uppercase text-[10px]">Tim Pengembang:</span>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <a
+                  href="https://github.com/mfikribp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-slate-700 transition-colors"
+                >
+                  <IconBrandGithub size={14} />
+                  <span>M Fikri Biban Putra</span>
+                </a>
+                <a
+                  href="https://github.com/luvices/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-slate-700 transition-colors"
+                >
+                  <IconBrandGithub size={14} />
+                  <span>Dafa Zahran</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

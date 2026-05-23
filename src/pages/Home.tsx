@@ -68,7 +68,7 @@ export default function Home() {
           >
             Materi Belajar <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600">
-              Kelas 7.
+              Kelas VII.
             </span>
           </motion.h1>
 

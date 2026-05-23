@@ -89,7 +89,7 @@ export default function Timeline() {
         <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-50/40 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 lg:pt-40 lg:pb-32">
         <header className="mb-24 text-center max-w-3xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

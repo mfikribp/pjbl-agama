@@ -17,7 +17,7 @@ export default function Makhraj() {
         <div className="absolute top-[20%] -right-[5%] w-[30%] h-[30%] bg-indigo-50/50 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-32">
+      <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20 lg:pt-40 lg:pb-32">
         <header className="mb-20 text-center max-w-3xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

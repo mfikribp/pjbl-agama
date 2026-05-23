@@ -3,33 +3,43 @@ import { SubjectMateri } from '../types';
 export const fiqihMateri: SubjectMateri = {
   id: "fiqih",
   subject: "Fiqih",
-  description: "Mempelajari tata cara ibadah dan hukum Islam praktis untuk ibadah sehari-hari.",
+  description: "Mempelajari tata cara ibadah dan hukum Islam praktis untuk ibadah sehari-hari berdasarkan fiqih Madzhab Syafi'i.",
   pdfUrl: "/assets/materi/fiqih/materi/96972746FIKIH_MTs_KELAS_VII_KSKK_2020_CompressPdf_copy.pdf",
   chapters: [
     {
-      id: "thaharah",
-      title: "Bab 1: Thaharah (Bersuci)",
-      content: "Thaharah merupakan syarat mutlak bagi sahnya ibadah, terutama shalat, yang terbagi dalam pembersihan diri dari Najis dan Hadas. Najis terdiri dari tiga tingkatan: Mukhaffafah (ringan seperti air kencing bayi laki-laki), Mutawassitah (sedang seperti darah atau nanah), dan Mughallazah (berat seperti kotoran anjing/babi). Sementara Hadas adalah kondisi tidak suci secara spiritual yang terbagi menjadi Hadas Kecil (disucikan dengan wudhu) dan Hadas Besar (disucikan dengan mandi wajib). Istinja' atau membersihkan diri setelah buang air serta Tayamum (penggunaan debu saat tidak ada air) menjadi bagian tak terpisahkan dalam menjaga kesucian hamba di hadapan Allah SWT."
+      id: "alat-bersuci",
+      title: "Bab I: Alat-Alat Bersuci (Thaharah)",
+      content: "Thaharah secara bahasa berarti bersih atau bersuci, sedangkan secara istilah adalah membersihkan diri dari hadas dan najis agar sah melakukan ibadah seperti shalat. Alat utama bersuci adalah air. Air dibagi menjadi empat hukum: 1) Air Mutlaq (suci menyucikan, seperti air sumur, air hujan, sungai, laut); 2) Air Musyammas (suci menyucikan tetapi makruh digunakan karena dipanaskan matahari di bawah wadah logam berkarat); 3) Air Musta'mal (suci tetapi tidak menyucikan karena telah digunakan bersuci wajib); 4) Air Mutanajjis (air terkena najis sehingga hukumnya tidak suci). Selain itu, dipelajari pembagian najis: Mukhaffafah (ringan, disucikan dengan memercikkan air bersih), Mutawassitah (sedang, seperti darah/nanah, disucikan dengan membasuh air hingga hilang warna, bau, rasa), dan Mughallazah (berat, seperti jilatan anjing/babi, disucikan dengan membasuh 7 kali, salah satunya wajib dicampur dengan tanah)."
     },
     {
-      id: "shalat-fardhu",
-      title: "Bab 2: Shalat Fardhu",
-      content: "Shalat fardhu lima waktu adalah tiang agama yang wajib dilaksanakan oleh muslim yang baligh, berakal, dan suci. Keabsahannya ditentukan oleh Syarat Sah (menutup aurat, masuk waktu, menghadap kiblat) dan pelaksanaan 13 Rukun Shalat mulai dari Niat hingga Tertib secara berurutan. Pelaksanaan shalat juga disempurnakan dengan Sunnah-sunnah seperti membaca doa Iftitah dan surat pendek Al-Qur'an. Sangat penting bagi seorang muslim untuk menghindari hal-hal yang membatalkan shalat, seperti berbicara sengaja, bergerak berlebihan, atau hilangnya kesucian (berhadats), agar ibadah yang dilakukan diterima sebagai amalan shalih."
+      id: "bersuci-hadas",
+      title: "Bab II: Bersuci dari Hadas (Wudhu, Mandi, Tayamum)",
+      content: "Hadas adalah kondisi tidak suci secara spiritual yang menghalangi sahnya ibadah. Hadas terbagi dua: 1) Hadas Kecil, disucikan dengan berwudhu yang memiliki 6 rukun wajib (niat, membasuh wajah, membasuh tangan sampai siku, mengusap sebagian kepala, membasuh kaki sampai mata kaki, dan tertib). 2) Hadas Besar (junub, haid, nifas), disucikan dengan Mandi Wajib yang memiliki rukun niat dan meratakan air ke seluruh anggota tubuh dari ujung rambut hingga kaki. Apabila tidak ada air setelah diusahakan dicari, atau sedang sakit parah yang membahayakan jika kena air, wudhu dan mandi wajib dapat digantikan dengan bersuci Tayamum menggunakan debu atau tanah yang suci (rukun tayamum meliputi niat, mengusap wajah, mengusap kedua tangan sampai siku, serta dilakukan secara tertib)."
     },
     {
-      id: "shalat-berjamaah",
-      title: "Bab 3: Shalat Berjamaah",
-      content: "Pelaksanaan shalat fardhu secara berjamaah memiliki nilai keutamaan 27 derajat lebih tinggi dibandingkan shalat sendirian. Keberhasilan shalat berjamaah bergantung pada Imam yang fasih bacaannya serta memahami hukum fiqih, dan Makmum yang wajib mengikuti setiap gerakan imam tanpa mendahuluinya. Bagi Makmum Masbuq, yaitu makmum yang terlambat mengikuti rakaat imam, terdapat tata cara khusus untuk melengkapi sisa rakaatnya setelah imam melakukan salam. Shalat berjamaah bukan hanya sekadar ibadah fisik, melainkan juga sarana mempererat ukhuwah (persaudaraan) dan kedisiplinan umat Islam."
+      id: "shalat-fardhu-lima-waktu",
+      title: "Bab III: Shalat Fardhu Lima Waktu",
+      content: "Shalat fardhu lima waktu adalah tiang agama yang wajib dilaksanakan oleh setiap muslim yang baligh, berakal, dan suci. Keabsahan shalat ditentukan oleh terpenuhinya Syarat Wajib (Islam, baligh, berakal) dan Syarat Sah (suci tempat/pakaian/badan, menghadap kiblat, menutup aurat, masuk waktu), serta pelaksanaan 13 Rukun Shalat mulai dari Niat, Takbiratul Ihram, Berdiri bagi yang mampu, Membaca Al-Fatihah, Ruku' dengan tuma'ninah, I'tidal dengan tuma'ninah, Sujud dua kali dengan tuma'ninah, Duduk di antara dua sujud dengan tuma'ninah, Duduk tasyahud akhir, Membaca tasyahud akhir, Membaca shalawat Nabi pada tasyahud akhir, Salam pertama, dan dijalankan secara Tertib. Pelaksanaan shalat wajib disempurnakan dengan sunnah shalat (Ab'adh yang bila tertinggal ditambal Sujud Sahwi sebelum salam, dan sunnah Haiat) serta wajib menjauhi hal-hal yang membatalkan shalat."
     },
     {
-      id: "dzikir-doa",
-      title: "Bab 4: Dzikir dan Doa Setelah Shalat",
-      content: "Dzikir adalah aktivitas lisan dan hati untuk senantiasa mengingat Allah guna memperoleh ketenangan batin. Setelah shalat fardhu, disunnahkan membaca Istighfar, Tasbih (Subhanallah 33x), Tahmid (Alhamdulillah 33x), Takbir (Allahu Akbar 33x), serta pembacaan Ayat Kursi. Setelah berdzikir, seorang hamba dianjurkan untuk Berdoa dengan menengadahkan tangan, merendahkan hati, dan meyakini bahwa Allah Maha Mengabulkan setiap permohonan. Adab dalam berdoa seperti memulai dengan pujian kepada Allah dan shalawat kepada Nabi Muhammad SAW menjadi kunci utama dalam menjalin hubungan spiritual yang mendalam antara Pencipta dan hamba-Nya."
+      id: "dzikir-doa-setelah-shalat",
+      title: "Bab IV: Dzikir dan Doa setelah Shalat",
+      content: "Dzikir secara bahasa berarti mengingat Allah SWT, bertujuan menenangkan jiwa dan mendekatkan diri kepada Pencipta. Setelah shalat fardhu, disunnahkan berdzikir secara tertib membaca Istighfar, Tasbih (Subhanallah 33x), Tahmid (Alhamdulillah 33x), Takbir (Allahu Akbar 33x), Tahlil (Laa ilaha illallah), serta membaca Ayat Kursi. Setelah selesai berdzikir, seorang hamba dianjurkan memanjatkan Doa dengan adab terbaik: menengadahkan tangan, merendahkan hati, mengawali dengan memuji keagungan Allah dan bershalawat atas Rasulullah SAW, meyakini doa pasti dikabulkan, serta melirihkan suara dengan penuh keseriusan dan kekhusyukan."
     },
     {
-      id: "shalat-jumat",
-      title: "Bab 5: Shalat Jumat",
-      content: "Shalat Jumat hukumnya Fardhu Ain atau wajib bagi laki-laki muslim yang sudah baligh, berakal, merdeka, dan bermukim (tidak sedang dalam perjalanan). Ibadah ini dilaksanakan secara berjamaah di waktu Zuhur dengan rangkaian utama berupa Dua Khotbah yang berisi wasiat takwa, shalawat, dan pembacaan ayat suci Al-Qur'an. Kesempurnaan Jumat dapat diraih dengan menjalankan adab seperti mandi jumat, memotong kuku, memakai wangi-wangian, dan datang ke masjid lebih awal. Sangat dilarang untuk berbicara atau melakukan aktivitas lain saat khotbah berlangsung karena hal tersebut dapat membatalkan pahala ibadah Jumat bagi orang yang melakukannya."
+      id: "shalat-berjamaah-kurikulum",
+      title: "Bab V: Shalat Berjamaah",
+      content: "Shalat berjamaah adalah shalat yang dilakukan bersama-sama oleh sekurang-kurangnya dua orang, dipimpin oleh seorang Imam di depan dan diikuti oleh Makmum di belakang. Hukumnya adalah Fardhu Kifayah bagi laki-laki mukim dalam shalat lima waktu, dengan keutamaan pahala 27 derajat lebih tinggi dibanding shalat sendirian. Kriteria utama memilih imam adalah paling fasih bacaan Al-Qur'annya dan paling luas wawasan fiqihnya. Makmum dibagi dua kelompok: Makmum Muwafiq (sempat membaca Al-Fatihah secara sempurna bersama imam sebelum ruku') dan Makmum Masbuq (terlambat mengikuti rakaat imam sehingga wajib menambah rakaat yang tertinggal secara tertib setelah imam melakukan salam)."
+    },
+    {
+      id: "shalat-jumat-merdeka",
+      title: "Bab VI: Shalat Jumat",
+      content: "Shalat Jumat hukumnya Fardhu Ain atau wajib bagi setiap laki-laki muslim yang memenuhi syarat (baligh, berakal sehat, merdeka, menetap/mukim, serta sehat fisik). Dilaksanakan berjamaah secara teratur di waktu Zuhur sebanyak dua rakaat. Keabsahan shalat Jumat mensyaratkan adanya Dua Khotbah sebelum shalat yang harus dibacakan berdiri oleh khatib. Rukun khotbah Jumat ada 5 yang wajib dipenuhi pada kedua khotbah: memuji Allah (Hamdalah), bershalawat kepada Nabi SAW, berwasiat takwa, membaca ayat Al-Qur'an di salah satu khotbah, dan memohon ampunan/berdoa untuk kaum mukminin pada khotbah kedua. Jamaah dilarang berbicara saat khotbah berlangsung agar pahala Jumat tidak gugur."
+    },
+    {
+      id: "shalat-jamak-qashar-darurat",
+      title: "Bab VII: Shalat Jamak, Qashar, dan Shalat Keadaan Darurat",
+      content: "Islam memberikan kemudahan (rukhsah) beribadah dalam keadaan sulit. Bagi musafir dengan jarak tempuh minimal 80,6 km, diperbolehkan melakukan: 1) Shalat Jamak (menggabungkan dua shalat fardhu di satu waktu), baik Jamak Taqdim maupun Jamak Takhir. 2) Shalat Qashar (meringkas jumlah rakaat shalat fardhu 4 rakaat menjadi 2 rakaat). Shalat Maghrib dan Shubuh tidak boleh di-qashar. Selain musafir, orang yang sedang sakit parah diberikan keringanan shalat darurat sesuai batas kemampuan fisiknya: jika tidak mampu berdiri boleh shalat duduk, jika tidak mampu duduk boleh berbaring miring menghadap kiblat, jika tidak mampu boleh terlentang dengan isyarat kepala/mata, dan terakhir dengan isyarat batin (hati)."
     }
   ]
 };
