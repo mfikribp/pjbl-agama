@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { IconChevronRight, IconRefresh, IconHome, IconCheck, IconX, IconTrophy, IconBrain } from '@tabler/icons-react';
+import { IconChevronRight, IconRefresh, IconHome, IconCheck, IconX, IconTrophy, IconBrain, IconBulb } from '@tabler/icons-react';
 import { materiAgama } from '../data/materi-agama';
 import { shuffleArray } from '../utils/quizUtils';
 
@@ -13,7 +13,7 @@ export default function Quiz() {
   const subjectData = materiAgama[subjectId];
   const initialQuizData = subjectData?.quizzes || [];
 
-  const [questions, setQuestions] = useState(() => shuffleArray(initialQuizData));
+  const [questions, setQuestions] = useState(() => shuffleArray(initialQuizData).slice(0, 20));
   const [idx, setIdx] = useState(0);
   const [answered, setAnswered] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
@@ -22,7 +22,7 @@ export default function Quiz() {
   
   // Re-shuffle when subject changes
   useEffect(() => {
-    setQuestions(shuffleArray(initialQuizData));
+    setQuestions(shuffleArray(initialQuizData).slice(0, 20));
     setIdx(0);
     setAnswered(false);
     setSelected(null);
@@ -231,7 +231,10 @@ export default function Quiz() {
                   >
                     <div className="bg-sky-50/50 p-10 rounded-[3rem] mb-10 border border-sky-100/50 relative overflow-hidden">
                       <div className="relative z-10">
-                        <span className="inline-block px-3 py-1 bg-sky-100 text-sky-600 font-black uppercase tracking-widest text-[9px] rounded-lg mb-4">💡 Penjelasan Jawaban</span>
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-sky-100 text-sky-600 font-black uppercase tracking-widest text-[9px] rounded-lg mb-4">
+                          <IconBulb size={12} className="text-sky-500 animate-pulse" />
+                          Penjelasan Jawaban
+                        </span>
                         <p className="text-slate-600 text-lg leading-relaxed">{q.penjelasan}</p>
                       </div>
                     </div>
